@@ -6,43 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/title"
-        android:textColor="#D500F9"
-        android:textSize="28sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edSessionTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="8"
-        android:textSize="28sp"
-        android:hint="Session Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <Button
-        android:id="@+id/btnAddSession"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="Add Session"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/edSessionTitle" />
-
     <Button
         android:id="@+id/btnMain"
         android:layout_width="wrap_content"
@@ -55,40 +18,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edPreTime"
-        android:layout_width="170dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:textSize="16dp"
-        android:hint="Preparation time"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edSessionTitle" />
-
-    <EditText
-        android:id="@+id/edTime"
-        android:layout_width="170dp"
-        android:layout_height="52dp"
-        android:ems="10"
-        android:textSize="16dp"
-        android:hint="Duration"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.94"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edPreTime" />
-
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="564dp"
+        android:layout_width="409dp"
+        android:layout_height="368dp"
         android:background="@android:color/holo_orange_light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edPreTime">
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -100,5 +38,70 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edSessionTitle"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:ems="8"
+                android:hint="Session Title"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/btnAddSession"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_orange"
+                android:padding="5dp"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:textSize="50dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edPreTime"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Preparation time"
+                android:inputType="number"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/edTime"
+                android:layout_width="0dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_height="52dp"
+                android:ems="10"
+                android:hint="Duration"
+                android:inputType="number"
+                android:textSize="16dp" />
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
